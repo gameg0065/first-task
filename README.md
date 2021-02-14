@@ -3,7 +3,7 @@ Testavimo, 1-oji užduotis - Įrėmintas pasisveikinimas
 
 ## Programos veikimas:
 
-Paleidus programa, prašoma suvesti maziausiai 3 simboliu ilgio vardą:
+Paleidus programa, prašoma įvesti mažiausiai 3 simbolių ilgio vardą:
 
 
 ```shell
