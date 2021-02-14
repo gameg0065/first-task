@@ -8,15 +8,14 @@ using namespace std;
 const string GreetingTexts[2] = {"Sveikas,", "Sveika,"};
 
 string GetName();
-int GetNumberOfLines(string name, string greetings);
+int GetNumberOfLines();
 void PrintResult(string name, string greetings, int numberOfLines);
 bool IsGenderMale(string name);
 
 int main()
 {
     string name = GetName();
-    string greetingText = GreetingTexts[(IsGenderMale(name) ? 0 : 1)];
-    PrintResult(name, greetingText, GetNumberOfLines(name, greetingText));
+    PrintResult(name, GreetingTexts[(IsGenderMale(name) ? 0 : 1)], GetNumberOfLines());
 }
 
 string GetName()
@@ -33,20 +32,16 @@ string GetName()
     return name;
 }
 
-int GetNumberOfLines(string name, string greetings)
+int GetNumberOfLines()
 {
-    int minNumber = name.length() + SingleSymbolLength * 6 + greetings.length();
-    int maxNumber = minNumber + MaxNumberOfLines;
     int userNumber = 0;
     do
     {
-        cout << "Enter number of lines between " << minNumber << " and " << maxNumber << endl;
+        cout << "Enter number of lines between 0 and " << MaxNumberOfLines << endl;
         cin >> userNumber;
-    } while (minNumber > userNumber || userNumber > maxNumber);
+    } while (0 > userNumber || userNumber > MaxNumberOfLines);
 
-    name[0] = toupper(name[0]);
-
-    return userNumber - minNumber;
+    return userNumber;
 }
 
 bool IsGenderMale(string name) {
