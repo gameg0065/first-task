@@ -4,15 +4,16 @@ using namespace std;
 
 #define MinLengthOfName 3
 #define SingleSymbolLength 1
-#define GreetingText "Sveikas,"
+const string GreetingTexts[2] = {"Sveikas,", "Sveika,"};
 
 void PrintResult(string name, string greetings);
 string GetName();
+bool IsGenderMale(string name);
 
 int main()
 {
-
-    PrintResult(GetName(), GreetingText);
+    string name = GetName();
+    PrintResult(name, GreetingTexts[(IsGenderMale(name) ? 0 : 1)]);
 }
 
 string GetName()
@@ -27,6 +28,17 @@ string GetName()
     name[0] = toupper(name[0]);
 
     return name;
+}
+
+bool IsGenderMale(string name) {
+    char lastChar = name[name.length() - 1];
+
+    if (lastChar == 'a' || lastChar == 'e')
+    {
+        return false;
+    }
+
+    return true;
 }
 
 void PrintResult(string name, string greetings) {
