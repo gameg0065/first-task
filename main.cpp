@@ -35,8 +35,10 @@ void PrintResult(string name, string greetings) {
     string defaultLine(name.length() + SingleSymbolLength * 6 + greetings.length(), symbol);
     string secondLine = symbol + string(name.length() + SingleSymbolLength * 4 + greetings.length(), ' ') + symbol;
     string mainLine = symbol + string(SingleSymbolLength, ' ') + greetings + string(SingleSymbolLength, ' ') + name + "!" + string(SingleSymbolLength, ' ') + symbol;
+    string defaultLineCopy(defaultLine);
+    string secondLineCopy(secondLine);
 
-    string result[] = {defaultLine, secondLine, mainLine, secondLine, defaultLine};
+    string result[] = {defaultLine, secondLine, mainLine, secondLineCopy, defaultLineCopy};
 
     for (int i = 0; i < 5; i++) {
         cout << result[i] << endl;
