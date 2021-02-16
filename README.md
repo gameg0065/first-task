@@ -15,3 +15,21 @@ Tomas
 *                 *
 *******************
 ```
+
+Jei vartotojo įvestas vardas yra moteriškas, programa prisitaiko pakeisdama žodį:
+
+```shell
+Enter your name: 
+Smilte
+*******************
+*                 *
+* Sveika, Smiltė! *
+*                 *
+*******************
+```
+
+
+
+### Changelog
+
+* [v0.1](https://github.com/gameg0065/first-task/releases/tag/0.1) Vartotojo vardas su sveikinimu pateikiamas rėmelyje.
